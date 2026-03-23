@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jewel Rachel Georgy | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }</style>
+</head>
+<body class="bg-gray-50">
+
+    <nav class="flex justify-between items-center px-10 py-6 bg-white shadow-sm sticky top-0 z-50">
+        <div class="text-2xl font-bold text-blue-600">JRG.</div>
+        <div class="space-x-8 text-gray-600 font-medium">
+            <a href="#about" class="hover:text-blue-600">About</a>
+            <a href="#skills" class="hover:text-blue-600">Skills</a>
+            <a href="#contact" class="hover:text-blue-600">Contact</a>
+        </div>
+    </nav>
+
+    <header class="text-center py-32 bg-white border-b">
+        <h1 class="text-6xl font-extrabold text-gray-900 mb-4">Jewel Rachel Georgy</h1>
+        <p class="text-xl text-gray-500 mb-8 font-medium">Aspiring Software Developer & BCA Student</p>
+        <a href="#contact" class="bg-blue-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition shadow-lg">Get In Touch</a>
+    </header>
+
+    <section id="about" class="max-w-4xl mx-auto py-24 px-6 text-center">
+        <h2 class="text-4xl font-bold text-blue-600 mb-8">About Me</h2>
+        <p class="text-gray-700 leading-relaxed text-xl">
+            I am currently pursuing my Bachelors in Computer Applications (BCA). I am passionate about building full-stack applications and exploring how modern technology can solve real-world problems. 
+            My goal is to transition from a student to a professional software developer, focusing on clean code, efficient databases, and user-friendly interfaces.
+        </p>
+    </section>
+
+    <section id="skills" class="bg-gray-100 py-20">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-gray-800 mb-12">Technical Toolbox</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="bg-white p-8 rounded-2xl shadow-sm border-b-4 border-blue-500 transition-transform hover:-translate-y-2">
+                    <h3 class="font-bold text-gray-800 mb-2">Frontend</h3>
+                    <p class="text-gray-600 text-sm">HTML, CSS, JavaScript, Tailwind</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-sm border-b-4 border-blue-500 transition-transform hover:-translate-y-2">
+                    <h3 class="font-bold text-gray-800 mb-2">Backend</h3>
+                    <p class="text-gray-600 text-sm">Node.js, Express</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-sm border-b-4 border-blue-500 transition-transform hover:-translate-y-2">
+                    <h3 class="font-bold text-gray-800 mb-2">Database</h3>
+                    <p class="text-gray-600 text-sm">PostgreSQL (Render)</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-sm border-b-4 border-blue-500 transition-transform hover:-translate-y-2">
+                    <h3 class="font-bold text-gray-800 mb-2">Tools</h3>
+                    <p class="text-gray-600 text-sm">Git, GitHub, Render</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-blue-600">
+        <div class="max-w-2xl mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-white mb-2">Let's Build Something Together</h2>
+            <p class="text-blue-100 mb-8">Send a message directly to my PostgreSQL database!</p>
+            
+            <form action="/jewel-submit" method="POST" class="space-y-4">
+                <input type="text" name="name" placeholder="Your Name" class="w-full p-4 rounded-lg focus:ring-2 focus:ring-blue-300 outline-none" required>
+                <textarea name="message" placeholder="How can I help you?" rows="4" class="w-full p-4 rounded-lg focus:ring-2 focus:ring-blue-300 outline-none" required></textarea>
+                <button type="submit" class="w-full bg-gray-900 text-white font-bold py-4 rounded-lg hover:bg-black transition shadow-xl">Send to Database</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="py-10 text-center text-gray-400 text-sm bg-white">
+        &copy; 2026 Jewel Rachel Georgy. Built with Node.js & Tailwind.
+    </footer>
+
+</body>
+</html>
