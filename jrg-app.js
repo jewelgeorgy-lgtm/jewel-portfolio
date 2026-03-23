@@ -54,3 +54,57 @@ app.post('/jewel-submit', async (req, res) => {
 });
 
 app.listen(PORT, () => console.log(`Jewel's Portfolio running at http://localhost:${PORT}`));
+// Secret link to view all messages
+app.get('/view-messages-123', async (req, res) => {
+    try {
+        const result = await pool.query('SELECT * FROM messages ORDER BY created_at DESC');
+        
+        let html = `
+            <html>
+            <head>
+                <title>Admin - View Messages</title>
+                <script src="https://cdn.tailwindcss.com"></script>
+            </head>
+            <body class="p-10 bg-gray-100">
+                <h1 class="text-2xl font-bold mb-6 text-blue-600">Jewel's Message Inbox</h1>
+                <div class="overflow-x-auto bg-white rounded-lg shadow">
+                    <table class="min-w-full table-auto">
+                        <thead class="bg-blue-600 text-white">
+                            <tr>
+                                <th class="px-4 py-2">ID</th>
+                                <th class="px-4 py-2">Name</th>
+                                <th class="px-4 py-2">Message</th>
+                                <th class="px-4 py-2">Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+        `;
+
+        result.rows.forEach(msg => {
+            html += `
+                <tr class="border-b">
+                    <td class="px-4 py-2 font-bold">${msg.id}</td>
+                    <td class="px-4 py-2">${msg.name}</td>
+                    <td class="px-4 py-2">${msg.message}</td>
+                    <td class="px-4 py-2 text-gray-500 text-sm">${msg.created_at}</td>
+                </tr>
+            `;
+        });
+
+        html += `
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mt-6 text-center">
+                    <a href="/" class="text-blue-500 hover:underline">← Back to Portfolio</a>
+                </div>
+            </body>
+            </html>
+        `;
+
+        res.send(html);
+    } catch (err) {
+        console.error(err);
+        res.status(500).send("Error loading messages.");
+    }
+});
