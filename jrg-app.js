@@ -9,7 +9,7 @@ app.use(express.static(__dirname));
 
 // Replace with YOUR OWN Render PostgreSQL URL
 const pool = new Pool({
-  connectionString: 'PASTE_YOUR_RENDER_DB_URL_HERE',
+  connectionString: process.env.DATABASE_URL, 
   ssl: { rejectUnauthorized: false }
 });
 
